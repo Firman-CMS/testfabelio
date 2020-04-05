@@ -24,7 +24,7 @@ tr:nth-child(even) {
 
 <h2>Page 3 | Result</h2>
 <a href="<?php echo base_url();?>fabelio/">Page 1</a> |
- <a href="<?php echo base_url();?>fabelio/list">Page 2</a> 
+<a href="<?php echo base_url();?>fabelio/list">Page 2</a> 
 <?php if($data) {?>
 <table>
   <tr>

@@ -28,17 +28,13 @@ tr:nth-child(even) {
   <tr>
     <th>Name</th>
     <th>Url</th>
-    <th>Price</th>
-    <th>Sale Price</th>
-    <th>Product image</th>
+    <th>Action</th>
   </tr>
   <?php foreach ($data as $value) { ?>
     <tr>
         <td><?php echo $value->name ?></td>
         <td><?php echo $value->url ?></td>
-        <td><?php echo $value->unit_price ?></td>
-        <td><?php echo $value->unit_sale_price ?></td>
-        <td> <img src="<?php echo $value->product_image_url ?>" width="100" height="100"> </td>
+        <td> <a href="<?php echo base_url();?>fabelio/detail?id=<?php echo $value->id ?>">link</a> </td>
     </tr>
   <?php } ?>
 </table>

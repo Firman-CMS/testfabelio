@@ -43,15 +43,12 @@ class Fabelio_controller extends CI_Controller
             $data = $siteData->product;
             $data->product_id = $productId;
 
-            $insertData = $this->fabelio_model->insertData($data);
+            $dataId = $this->fabelio_model->insertData($data);
 
-            if ($insertData) {
-                $list['data'] = $data;
-                $this->load->view('Fabelio/page3', $list);
+            if ($dataId) {
+                redirect(base_url() . "fabelio/detail?id=".$dataId);
             }
         }
-
-        // echo($this->return);
     }
 
     public function list()
@@ -60,6 +57,35 @@ class Fabelio_controller extends CI_Controller
 
         if ($list['data']) {
             $this->load->view('Fabelio/list', $list);
+        }
+    }
+
+    public function detail()
+    {
+        $id = $this->input->get('id');
+        if (!$id) {
+            redirect(base_url());
+        }
+        
+        $data = $this->fabelio_model->getDataById($id);
+
+        if ($data) {
+            $list['data'] = $data;
+            $this->load->view('Fabelio/page3', $list);
+        }
+    }
+
+    public function cron_job()
+    {
+        $data = $this->fabelio_model->getListCron();
+        
+        foreach ($data as $value) {
+            $siteData = getCurl($value->product_id);
+            $siteData = json_decode($siteData);
+            $listData = $siteData->product;
+            $listData->product_id = $value->product_id;
+
+            $updateData = $this->fabelio_model->updateData($listData);
         }
     }
 }
