@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Detail product information</title>
 <style>
 table {
   font-family: arial, sans-serif;

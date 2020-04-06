@@ -10,7 +10,7 @@
         <legend>Page 1</legend>
         <p>
             <label>Fabelio product url:</label>
-            <input type="text" name="url" placeholder="Url product..." />
+            <input type="text" name="url" placeholder="Product page link..." size="50" />
         </p>
         <p>
             <input type="submit" name="submit" value="submit" />

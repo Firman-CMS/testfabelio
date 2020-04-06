@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>List of product page urls</title>
 <style>
 table {
   font-family: arial, sans-serif;

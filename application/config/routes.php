@@ -59,7 +59,7 @@ $route['default_controller'] = 'fabelio_controller';
 $route["fabelio"] = 'fabelio_controller/index';
 $route["fabelio/result"] = 'fabelio_controller/result';
 $route["fabelio/list"] = 'fabelio_controller/list';
-$route["fabelio/list"] = 'fabelio_controller/list';
+$route["fabelio/cron_job"] = 'fabelio_controller/cron_job';
 $route["fabelio/detail"] = 'fabelio_controller/detail';
 
 /*
